@@ -25,33 +25,42 @@ namespace losowanie_liczb
         {
             int zakres1, zakres2, ile_liczb, liczba;
 
-            zakres1 = Convert.ToInt32(od.Text);
-            zakres2 = Convert.ToInt32(do1.Text);
-            ile_liczb = Convert.ToInt32(ilosc.Text);
+            wynik.Text = "Podałeś nieporawne liczby";
 
-            string nasze_liczby="";
+            if (Int32.TryParse(od.Text, out zakres1) && Int32.TryParse(do1.Text, out zakres2) && Int32.TryParse(ilosc.Text, out ile_liczb))
+            {
 
-            Random los = new Random();
+               // zakres1 = Convert.ToInt32(od.Text);
+               // zakres2 = Convert.ToInt32(do1.Text);
+               // ile_liczb = Convert.ToInt32(ilosc.Text);
 
-            for (int i = 0; i < ile_liczb; i++) { 
-            
-                liczba = los.Next(zakres1,zakres2);
+                string nasze_liczby = "";
 
-                nasze_liczby = nasze_liczby + Convert.ToString(liczba) + " ";
+                Random los = new Random();
 
-                if(i % 20 == 0 && i != 0) {
+                for (int i = 0; i < ile_liczb; i++)
+                {
 
-                    nasze_liczby = nasze_liczby + " \n";
+                    liczba = los.Next(zakres1, zakres2);
+
+                    nasze_liczby = nasze_liczby + Convert.ToString(liczba) + " ";
+
+                    if (i % 20 == 0 && i != 0)
+                    {
+
+                        nasze_liczby = nasze_liczby + " \n";
+
+
+                    }
+
+
 
 
                 }
 
+                wynik.Text = nasze_liczby;
 
-
-            
             }
-
-            wynik.Text = nasze_liczby; 
 
         }
     }
