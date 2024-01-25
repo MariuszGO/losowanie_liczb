@@ -23,13 +23,28 @@ namespace losowanie_liczb
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int zakres1, zakres2, ile_liczb, liczba;
+            int zakres1, zakres2, ile_liczb, liczba, tmp;
 
-            wynik.Text = "Podałeś nieporawne liczby";
+            wynik.Text = "Podałeś nieporawne znaki";
 
-            if (Int32.TryParse(od.Text, out zakres1) && Int32.TryParse(do1.Text, out zakres2) && Int32.TryParse(ilosc.Text, out ile_liczb))
+            Int32.TryParse(ilosc.Text, out ile_liczb);
+
+            if(ile_liczb <= 0)
+            {
+                wynik.Text = "Podałeś nieporawną ilość liczb";
+                MessageBox.Show("Podałeś ilość liczb mniejszą lub równą zero","Błąd",MessageBoxButton.OK, MessageBoxImage.Error);
+            
+            }
+
+            else if (Int32.TryParse(od.Text, out zakres1) && Int32.TryParse(do1.Text, out zakres2) && Int32.TryParse(ilosc.Text, out ile_liczb))
             {
 
+                if (zakres1 > zakres2)
+                {
+                    tmp = zakres1;
+                    zakres1 = zakres2;
+                    zakres2 = tmp;
+                }
                // zakres1 = Convert.ToInt32(od.Text);
                // zakres2 = Convert.ToInt32(do1.Text);
                // ile_liczb = Convert.ToInt32(ilosc.Text);

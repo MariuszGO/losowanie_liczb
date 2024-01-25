@@ -20,13 +20,13 @@
         </Grid.RowDefinitions>
         <Label Grid.Column="1" Content="Zakres losowania" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top"/>
         <Label Grid.Column="1"   Content="Od" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="od" Grid.Column="1" HorizontalAlignment="Left" Margin="58,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.532,1.353"/>
+        <TextBox MaxLength="3" x:Name="od" Grid.Column="1" HorizontalAlignment="Left" Margin="58,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.532,1.353"/>
         <Label Grid.Column="1"   Content="Do" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="do1" Grid.Column="1"  HorizontalAlignment="Left" Margin="58,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="33"/>
+        <TextBox MaxLength="5" x:Name="do1" Grid.Column="1"  HorizontalAlignment="Left" Margin="58,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="33"/>
         <Label Grid.Column="2" Content="Ilość Liczb" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="0" VerticalAlignment="Center"/>
-        <TextBox x:Name="ilosc" Grid.Column="2" HorizontalAlignment="Left" Margin="88,0,0,0" Grid.Row="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="30"/>
+        <TextBox MaxLength="2" x:Name="ilosc" Grid.Column="2" HorizontalAlignment="Left" Margin="88,0,0,0" Grid.Row="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="30"/>
         <Button Grid.Column="1" Content="Losuj" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1"  VerticalAlignment="Center" RenderTransformOrigin="0.483,-0.202" Click="Button_Click"/>
-        <TextBlock x:Name="wynik" Width="500" Height="150" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="20,20,20,20" Grid.Row="2" VerticalAlignment="Top" Text=""/>
+        <TextBlock  x:Name="wynik" Width="500" Height="150" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="20,20,20,20" Grid.Row="2" VerticalAlignment="Top" Text=""/>
 
     </Grid>
 </Window>
